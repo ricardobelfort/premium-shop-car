@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-center align-items-center mt-5">
+  <div class="card" style="min-width: 400px;">
+    <div class="card-body">
+      <h5 class="card-title">Registro</h5>
+      <form>
+        <div class="mb-3">
+          <label for="name" class="form-label">Nome</label>
+          <input type="text" [(ngModel)]="novoUsuario.name" name="name" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">E-mail</label>
+          <input type="email" [(ngModel)]="novoUsuario.email" name="email" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Senha</label>
+          <input type="password" [(ngModel)]="novoUsuario.password" name="password" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="register()">Criar conta</button>
+      </form>
+    </div>
+  </div>
+</div>
