@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,9 @@ import { CarDetailComponent } from './pages/home/car-detail/car-detail.component
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { CarFormComponent } from './pages/home/car-form/car-form.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { CarService } from './services/car.service';
+import { AuthService } from './services/auth.service';
+import { TokenInterceptor } from './token.interceptor';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,15 @@ import { RegisterComponent } from './pages/register/register.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    CarService,
+    AuthService,
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass : TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

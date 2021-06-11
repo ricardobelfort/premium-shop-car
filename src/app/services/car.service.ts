@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class CarService {
 
-  private readonly API: string = `${environment.API}carros`;
+  private readonly API: string = `${environment.API}/cars`;
 
   constructor(private http: HttpClient) { }
 

@@ -5,7 +5,7 @@
       <form>
         <div class="mb-3">
           <label for="name" class="form-label">Nome</label>
-          <input type="text" [(ngModel)]="novoUsuario.name" name="name" class="form-control">
+          <input type="text" [(ngModel)]="novoUsuario.nome" name="name" class="form-control">
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">E-mail</label>
@@ -13,7 +13,7 @@
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Senha</label>
-          <input type="password" [(ngModel)]="novoUsuario.password" name="password" class="form-control">
+          <input type="password" [(ngModel)]="novoUsuario.senha" name="password" class="form-control">
         </div>
         <button type="submit" class="btn btn-primary" (click)="register()">Criar conta</button>
       </form>
