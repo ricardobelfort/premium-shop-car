@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CarListComponent } from './pages/home/car-list/car-list.component';
 import { CarFormComponent } from './pages/home/car-form/car-form.component';
 import { LoginComponent } from './pages/login/login.component';
+import { CarDetailComponent } from './pages/home/car-detail/car-detail.component';
 
 const routes: Routes = [
   {

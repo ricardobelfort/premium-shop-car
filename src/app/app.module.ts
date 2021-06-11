@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -16,6 +16,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { CarService } from './services/car.service';
 import { AuthService } from './services/auth.service';
 import { TokenInterceptor } from './token.interceptor';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -31,9 +32,16 @@ import { TokenInterceptor } from './token.interceptor';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot({
+      progressBar: true,
+      progressAnimation: 'increasing',
+      timeOut: 2000,
+      positionClass: "toast-top-right"
+    })
   ],
   providers: [
     CarService,
